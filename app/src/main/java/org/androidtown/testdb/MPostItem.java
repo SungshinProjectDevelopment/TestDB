@@ -5,15 +5,15 @@ package org.androidtown.testdb;
  */
 
 public class MPostItem {
-    String postname;
+    String posttitle;
     String restaurantname;
     String rating;
     String hits;
     String writerid;
     String postbody;
 
-    public MPostItem(String postname, String restaurantname, String rating, String hits, String writerid, String postbody) {
-        this.postname = postname;
+    public MPostItem(String posttitle, String restaurantname, String rating, String hits, String writerid, String postbody) {
+        this.posttitle = posttitle;
         this.restaurantname = restaurantname;
         this.rating = rating;
         this.hits = hits;

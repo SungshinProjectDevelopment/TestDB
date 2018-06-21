@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="org.androidtown.testdb.MineList" />
+        <activity android:name="org.androidtown.testdb.AddMine" />
 
         <meta-data
             android:name="android.support.VERSION"

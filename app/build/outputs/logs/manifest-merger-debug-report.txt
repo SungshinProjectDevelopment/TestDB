@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\d04dc1f42b36b56356dfe34f4942d356\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\54ea83953429a5278b47a6afe74f065b\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\d970b92b354955f2bb9f7c79b57afec6\AndroidManifest.xml:17:1-28:12
@@ -15,20 +15,20 @@ MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\hyon1001\.grad
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\ff146c28654074b19970573ef1483fd5\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\838e336762380a7d394d835d633b6367\AndroidManifest.xml:2:1-11:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\55c6b39d05abf72d99af1c64c1e01382\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:3:5-37
 		INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
 		INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:1-25:12
 		INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:2:11-69
@@ -37,7 +37,7 @@ ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:
 	android:name
 		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:7:5-22:19
+ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:7:5-23:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\d04dc1f42b36b56356dfe34f4942d356\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\d04dc1f42b36b56356dfe34f4942d356\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\hyon1001\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\54ea83953429a5278b47a6afe74f065b\AndroidManifest.xml:22:5-26:19
@@ -90,6 +90,10 @@ activity#org.androidtown.testdb.MineList
 ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:21:9-55
 	android:name
 		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:21:19-43
+activity#org.androidtown.testdb.AddMine
+ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:22:9-54
+	android:name
+		ADDED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml:22:19-42
 uses-sdk
 INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\hyon1001\Desktop\testdbdir\app\src\main\AndroidManifest.xml

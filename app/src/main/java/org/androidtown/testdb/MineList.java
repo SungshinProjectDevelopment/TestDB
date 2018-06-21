@@ -1,6 +1,7 @@
 package org.androidtown.testdb;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -43,16 +44,24 @@ public class MineList extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.minelist);
         listView.setAdapter(MyAdapter);
+        GetMines();
 
-        Button resetlist = findViewById(R.id.enter);
+        Button resetlist = findViewById(R.id.search_mine);
         resetlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GetMines();
-//                Toast.makeText(MineList.this, "HERE", Toast.LENGTH_SHORT).show();
             }
         });
-        Button new_mine = (Button) findViewById(R.id.btn_mine_new);
+
+        Button new_mine = (Button) findViewById(R.id.btn_add_mine);
+        new_mine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MineList.this, AddMine.class));
+                //Toast.makeText(MineList.this, "여기나옴",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void GetMines() {
@@ -81,25 +90,15 @@ public class MineList extends AppCompatActivity {
 
                         for (int i = 0; i < jArr.length(); i++) {
                             json = jArr.getJSONObject(i);
-                            pi = new MPostItem(json.getString("postname"),
+                            pi = new MPostItem(json.getString("posttitle"),
                                     json.getString("restaurantname"),
                                     json.getString("rating"),
                                     json.getString("hits"),
                                     json.getString("writerid"),
                                     json.getString("postbody"));
-//                            pi = new MPostItem(jArr.getJSONObject(i).getString("postname"),
-//                                    jArr.getJSONObject(i).getString("restaurantname"),
-//                                    jArr.getJSONObject(i).getDouble("rating"),
-//                                    jArr.getJSONObject(i).getInt("hits"),
-//                                    jArr.getJSONObject(i).getString("writerid"),
-//                                    jArr.getJSONObject(i).getString("postbody"));
-                            Toast.makeText(MineList.this, json.getString("postname"), Toast.LENGTH_SHORT).show();
-
                             mineitem.add(pi);
                             MyAdapter.notifyDataSetChanged();
                         }
-                        Toast.makeText(MineList.this, "for끝", Toast.LENGTH_SHORT).show();
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -161,7 +160,7 @@ class MineListAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int i) {
-        return mineItems.get(i).postname;
+        return mineItems.get(i).posttitle;
     }
 
     @Override
@@ -175,8 +174,8 @@ class MineListAdapter extends BaseAdapter {
         if(view ==null)
             view = Inflater.inflate(layout, viewGroup, false);
 
-        TextView postname = (TextView)view.findViewById(R.id.minelistitem_postname);
-        postname.setText(mineItems.get(position).postname);
+        TextView posttitle = (TextView)view.findViewById(R.id.minelistitem_posttitle);
+        posttitle.setText(mineItems.get(position).posttitle);
 
         TextView restaurantname = (TextView)view.findViewById(R.id.minelistitem_restaurantname);
         restaurantname.setText(mineItems.get(position).restaurantname);
