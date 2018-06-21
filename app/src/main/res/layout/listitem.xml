@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="27sp"
+        android:text="식당이름"/>
+    <TextView
+        android:id="@+id/item_writer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="글쓴이"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@id/item_title"/>
+    <TextView
+        android:id="@+id/item_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주소"
+        android:layout_below="@id/item_title"/>
+
+</RelativeLayout>

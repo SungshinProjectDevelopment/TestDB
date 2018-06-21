@@ -26,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="org.androidtown.testdb.MineList" />
 
         <meta-data
             android:name="android.support.VERSION"
