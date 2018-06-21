@@ -7,12 +7,12 @@ package org.androidtown.testdb;
 public class MPostItem {
     String postname;
     String restaurantname;
-    double rating;
-    int hits;
+    String rating;
+    String hits;
     String writerid;
     String postbody;
 
-    public MPostItem(String postname, String restaurantname, double rating, int hits, String writerid, String postbody) {
+    public MPostItem(String postname, String restaurantname, String rating, String hits, String writerid, String postbody) {
         this.postname = postname;
         this.restaurantname = restaurantname;
         this.rating = rating;

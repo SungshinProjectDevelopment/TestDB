@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class MineList extends AppCompatActivity {
         setContentView(R.layout.activity_mine_list);
 
         mineitem = new ArrayList<MPostItem>();
-        pi = new MPostItem("벌레나옴", "식당1", 1.5, 1, "김 미고랭", "여기 매일왔는데 이번에 벌레나왔어요! ㅡㅡ");
+        pi = new MPostItem("벌레나옴", "식당1", "1.5", "1", "김 미고랭", "여기 매일왔는데 이번에 벌레나왔어요! ㅡㅡ");
         mineitem.add(pi);
         MyAdapter = new MineListAdapter(this, R.layout.minelistitem, mineitem);
 
@@ -49,18 +50,16 @@ public class MineList extends AppCompatActivity {
             public void onClick(View view) {
                 GetMines();
 //                Toast.makeText(MineList.this, "HERE", Toast.LENGTH_SHORT).show();
-
             }
         });
         Button new_mine = (Button) findViewById(R.id.btn_mine_new);
     }
 
-
-
     private void GetMines() {
 
         final String SIGNIN_URL = "http://13.209.48.149:8080/testdir/connect_minelist.jsp";
-//        final String urlSuffix = "?value=0";
+        final String urlSuffix = "?hits=1";
+        Log.d("urlSuffix", urlSuffix);
 
         class SignupUser extends AsyncTask<String, Void, String> {
 
@@ -72,31 +71,42 @@ public class MineList extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
+                if(s!=null) {
 
-                if (s != null) {
                     try {
+//                        Toast.makeText(MineList.this, "HERE", Toast.LENGTH_SHORT).show();
+
                         JSONArray jArr = new JSONArray(s);
                         JSONObject json = new JSONObject();
-                        Toast.makeText(MineList.this, "HERE", Toast.LENGTH_SHORT).show();
-//                        Toast.makeText(MineList.this, jArr.toString(), Toast.LENGTH_SHORT).show();
-//                        org.json.JSONException: Value Table of type java.lang.String cannot be converted to JSONArray?
-                        for (int i = 0; i < jArr.length(); i++) {
 
-                            pi = new MPostItem(jArr.getJSONObject(i).getString("postname"),
-                                    jArr.getJSONObject(i).getString("restaurantname"),
-                                    jArr.getJSONObject(i).getDouble("rating"),
-                                    jArr.getJSONObject(i).getInt("hits"),
-                                    jArr.getJSONObject(i).getString("writerid"),
-                                    jArr.getJSONObject(i).getString("postbody"));
+                        for (int i = 0; i < jArr.length(); i++) {
+                            json = jArr.getJSONObject(i);
+                            pi = new MPostItem(json.getString("postname"),
+                                    json.getString("restaurantname"),
+                                    json.getString("rating"),
+                                    json.getString("hits"),
+                                    json.getString("writerid"),
+                                    json.getString("postbody"));
+//                            pi = new MPostItem(jArr.getJSONObject(i).getString("postname"),
+//                                    jArr.getJSONObject(i).getString("restaurantname"),
+//                                    jArr.getJSONObject(i).getDouble("rating"),
+//                                    jArr.getJSONObject(i).getInt("hits"),
+//                                    jArr.getJSONObject(i).getString("writerid"),
+//                                    jArr.getJSONObject(i).getString("postbody"));
+                            Toast.makeText(MineList.this, json.getString("postname"), Toast.LENGTH_SHORT).show();
 
                             mineitem.add(pi);
                             MyAdapter.notifyDataSetChanged();
                         }
+                        Toast.makeText(MineList.this, "for끝", Toast.LENGTH_SHORT).show();
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                } else
+                }
+                else
                     Toast.makeText(MineList.this, "서버와의 통신에 문제가 발생했습니다", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -105,13 +115,14 @@ public class MineList extends AppCompatActivity {
 
                 try {
                     HttpClient client = new DefaultHttpClient();  // 보낼 객체 만들기
-                    HttpPost post = new HttpPost(SIGNIN_URL);  // 주소 뒤에 데이터를 넣기
+                    HttpPost post = new HttpPost(SIGNIN_URL + urlSuffix);  // 주소 뒤에 데이터를 넣기
 
                     HttpResponse response = client.execute(post); // 데이터 보내기
 
                     BufferedReader bufreader = new BufferedReader(
                             new InputStreamReader(
-                                    response.getEntity().getContent(), "utf-8"));
+//                                    response.getEntity().getContent(), "utf-8"));
+                                    response.getEntity().getContent(), "EUC-KR"));
 
                     String line = null;
                     String page = "";
@@ -126,7 +137,7 @@ public class MineList extends AppCompatActivity {
             }
         }
         SignupUser su = new SignupUser();
-        su.execute();
+        su.execute(urlSuffix);
     }
 }
 
@@ -171,10 +182,10 @@ class MineListAdapter extends BaseAdapter {
         restaurantname.setText(mineItems.get(position).restaurantname);
 
         TextView rating = (TextView)view.findViewById(R.id.minelistitem_rating);
-        rating.setText(Double.toString(mineItems.get(position).rating));
+        rating.setText(mineItems.get(position).rating);
 
         TextView hits = (TextView)view.findViewById(R.id.minelistitem_hits);
-        hits.setText(Integer.toString(mineItems.get(position).hits));
+        hits.setText(mineItems.get(position).hits);
 
         TextView writerid = (TextView)view.findViewById(R.id.minelistitem_writer);
         writerid.setText(mineItems.get(position).writerid);
